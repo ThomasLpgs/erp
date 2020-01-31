@@ -22,7 +22,6 @@ public class ProduitControllerTest {
     @Mock
     private ProduitRepository produitRepository;
 
-
     @InjectMocks
     private ProduitController produitController;
 
