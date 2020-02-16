@@ -49,6 +49,7 @@ public class FournisseurControllerTest {
         List<FournisseurWithLink> fournisseursWithLinks = new ArrayList<>();
 
         fournisseursWithLinks.add(fournisseurWithLink);
+
         // Mock
         Mockito.when(fournisseurService.getAll()).thenReturn(fournisseursWithLinks);
 
