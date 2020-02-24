@@ -4,7 +4,6 @@ import fr.epsi.erp.dto.FournisseurAddProduit;
 import fr.epsi.erp.dto.FournisseurCreate;
 import fr.epsi.erp.dto.FournisseurWithLink;
 import fr.epsi.erp.exception.ExceptionFonctionnnelle;
-import fr.epsi.erp.model.Constant;
 import fr.epsi.erp.model.Fournisseur;
 import fr.epsi.erp.model.FournisseurProduit;
 import fr.epsi.erp.repository.FournisseurRepository;
@@ -57,7 +56,7 @@ public class FournisseurController implements IFournisseurController {
 
         Fournisseur fournisseur = optionalFournisseur.get();
 
-        return new FournisseurWithLink(fournisseur.getId(), fournisseur.getNom(), Constant.baseUrl + "/api/" + fournisseur.getId() + "/produits");
+        return new FournisseurWithLink(fournisseur.getId(), fournisseur.getNom(), "/api/fournisseurs/" + fournisseur.getId() + "/produits");
     }
 
     @Override
