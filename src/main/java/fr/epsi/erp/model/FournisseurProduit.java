@@ -28,8 +28,8 @@ public class FournisseurProduit {
         return id;
     }
 
-    public void setId(Long p_id) {
-        this.id = p_id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Produit getProduit() {

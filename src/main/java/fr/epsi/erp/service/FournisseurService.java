@@ -35,7 +35,7 @@ public class FournisseurService {
         List<FournisseurWithLink> fournisseurWithLinks = new ArrayList<>();
 
         for (Fournisseur fournisseur : fournisseurs) {
-            FournisseurWithLink fournisseurWithLink = new FournisseurWithLink(fournisseur.getId(), fournisseur.getNom(), Constant.baseUrl + "/api/" + fournisseur.getId() + "/produits");
+            FournisseurWithLink fournisseurWithLink = new FournisseurWithLink(fournisseur.getId(), fournisseur.getNom(), Constant.BASE_URL + "/api/" + fournisseur.getId() + "/produits");
             fournisseurWithLinks.add(fournisseurWithLink);
         }
 
@@ -48,9 +48,7 @@ public class FournisseurService {
         fournisseur.setNom(fournisseurCreate.getNom());
         fournisseur = fournisseurRepository.save(fournisseur);
 
-        FournisseurWithLink fournisseurWithLink = new FournisseurWithLink(fournisseur.getId(), fournisseur.getNom(), Constant.baseUrl + "/api/" + fournisseur.getId() + "/produits");
-
-        return fournisseurWithLink;
+        return new FournisseurWithLink(fournisseur.getId(), fournisseur.getNom(), Constant.BASE_URL + "/api/" + fournisseur.getId() + "/produits");
     }
 
     public List<FournisseurProduit> addProduit(FournisseurAddProduit fournisseurAddProduit) throws Exception {

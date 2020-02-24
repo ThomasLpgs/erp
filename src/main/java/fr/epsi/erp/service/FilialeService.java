@@ -37,7 +37,7 @@ public class FilialeService {
         List<Filiale> filiales = filialeRepository.findAll();
 
         for (Filiale filiale : filiales) {
-            FilialeWithLink filialeWithLink = new FilialeWithLink(filiale.getId(), filiale.getNom(), Constant.baseUrl + "/api/filiale/" + filiale.getId() + "/achats");
+            FilialeWithLink filialeWithLink = new FilialeWithLink(filiale.getId(), filiale.getNom(), Constant.BASE_URL + "/api/filiale/" + filiale.getId() + "/achats");
             filialeWithLinks.add(filialeWithLink);
         }
 
@@ -71,7 +71,7 @@ public class FilialeService {
         List<Achat> achats = filiale.getAchats();
 
         for (Achat achatDb : achats) {
-            AchatWithLink achatWithLink = new AchatWithLink(achatDb.getId(), achatDb.getDate(), Constant.baseUrl + "/api/filiale/" + achatCreate.getIdFiliale(), Constant.baseUrl + "/api/fournisseurs/" + achatCreate.getIdFournisseurProduit() + "/produits", achatDb.getQuantite());
+            AchatWithLink achatWithLink = new AchatWithLink(achatDb.getId(), achatDb.getDate(), Constant.BASE_URL + "/api/filiale/" + achatCreate.getIdFiliale(), Constant.BASE_URL + "/api/fournisseurs/" + achatCreate.getIdFournisseurProduit() + "/produits", achatDb.getQuantite());
             achatWithLinks.add(achatWithLink);
         }
 
@@ -93,7 +93,7 @@ public class FilialeService {
         List<Achat> achats = filiale.getAchats();
 
         for (Achat achatDb : achats) {
-            AchatWithLink achatWithLink = new AchatWithLink(achatDb.getId(), achatDb.getDate(), Constant.baseUrl + "/api/filiale/" + idFiliale, Constant.baseUrl + "/api/fournisseurs/" + achatDb.getFournisseurProduit().getId() + "/produits", achatDb.getQuantite());
+            AchatWithLink achatWithLink = new AchatWithLink(achatDb.getId(), achatDb.getDate(), Constant.BASE_URL + "/api/filiale/" + idFiliale, Constant.BASE_URL + "/api/fournisseurs/" + achatDb.getFournisseurProduit().getId() + "/produits", achatDb.getQuantite());
             achatWithLinks.add(achatWithLink);
         }
 

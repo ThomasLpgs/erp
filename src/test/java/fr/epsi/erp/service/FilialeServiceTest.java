@@ -89,8 +89,8 @@ public class FilialeServiceTest {
         // Assert
         assertThat(listAchatWithLink.size() == 1);
         assertThat(listAchatWithLink.get(0).getId() == achat.getId());
-        assertThat(listAchatWithLink.get(0).getFilialeLink().equals(Constant.baseUrl + "/api/filiale/" + filiale.getId()));
-        assertThat(listAchatWithLink.get(0).getFournisseurProduitLink().equals(Constant.baseUrl + "/api/fournisseurs/" + fourniProd.getId() + "/produits"));
+        assertThat(listAchatWithLink.get(0).getFilialeLink().equals(Constant.BASE_URL + "/api/filiale/" + filiale.getId()));
+        assertThat(listAchatWithLink.get(0).getFournisseurProduitLink().equals(Constant.BASE_URL + "/api/fournisseurs/" + fourniProd.getId() + "/produits"));
 
     }
 
@@ -123,8 +123,8 @@ public class FilialeServiceTest {
         // Assert
         assertThat(achatWithLinks.size() == 1);
         assertThat(achatWithLinks.get(0).getId().equals(achat.getId()));
-        assertThat(achatWithLinks.get(0).getFilialeLink().equals(Constant.baseUrl + "/api/filiale/" + filiale.getId()));
-        assertThat(achatWithLinks.get(0).getFournisseurProduitLink().equals(Constant.baseUrl + "/api/fournisseurs/" + fournisseurProduit.getId() + "/produits"));
+        assertThat(achatWithLinks.get(0).getFilialeLink().equals(Constant.BASE_URL + "/api/filiale/" + filiale.getId()));
+        assertThat(achatWithLinks.get(0).getFournisseurProduitLink().equals(Constant.BASE_URL + "/api/fournisseurs/" + fournisseurProduit.getId() + "/produits"));
 
     }
 }

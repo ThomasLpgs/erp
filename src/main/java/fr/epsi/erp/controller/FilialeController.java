@@ -5,7 +5,6 @@ import fr.epsi.erp.dto.AchatWithLink;
 import fr.epsi.erp.dto.FilialeCreate;
 import fr.epsi.erp.dto.FilialeWithLink;
 import fr.epsi.erp.exception.ExceptionFonctionnnelle;
-import fr.epsi.erp.model.Constant;
 import fr.epsi.erp.model.Filiale;
 import fr.epsi.erp.repository.FilialeRepository;
 import fr.epsi.erp.service.FilialeService;
@@ -60,9 +59,7 @@ public class FilialeController implements IFilialeController {
 
         Filiale filiale = optionalFiliale.get();
 
-        FilialeWithLink filialeWithLink = new FilialeWithLink(filiale.getId(), filiale.getNom(), "/api/filiale/" + filiale.getId() + "/achats");
-
-        return filialeWithLink;
+        return new FilialeWithLink(filiale.getId(), filiale.getNom(), "/api/filiale/" + filiale.getId() + "/achats");
     }
 
     @Override
